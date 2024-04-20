@@ -3,6 +3,7 @@ import { Route } from '@angular/router';
 import { ChartsComponent } from './charts/charts.component';
 
 // import flightRoutes from './flights/flights.routes';
+import { DeferredChartsComponent } from './deferred-charts/deferred-charts.component';
 
 export const appRoutes: Route[] = [
   {
@@ -25,6 +26,11 @@ export const appRoutes: Route[] = [
   {
     path: 'charts',
     loadComponent: () => import('./charts/charts.component'),
+  },
+
+  {
+    path: 'deferred-charts',
+    component: DeferredChartsComponent,
   },
 
   /*{
