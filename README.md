@@ -1,18 +1,10 @@
-# Alexander Thalhammer - A11y Workshop
+# NG Days 2024 Berlin Performance Optimization Workshop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2 and has since been improved and update by [@LX_T](https://twitter.com/LX_T), currently using Angular 18.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9 and has since been improved and update by [@LX_T](https://twitter.com/LX_T), currently using Angular 18.2.9.
 
 ## Slides
 
 You'll find the workshop slides in the `slides` directory.
-
-## Exercises
-
-You'll find the workshop labs in the `labs` directory.
-
-Take a look at the `00_getting-started.md` lab.
-
-Hint: open the lab in preview mode or in your browser!
 
 ## Development
 
