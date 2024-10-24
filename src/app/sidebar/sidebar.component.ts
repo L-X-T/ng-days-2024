@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BlinkService } from '../shared/blink.service';
 import { NgOptimizedImage } from '@angular/common';
@@ -10,6 +10,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
   imports: [RouterModule, NgOptimizedImage, QuicklinkModule],
   templateUrl: 'sidebar.component.html',
   styleUrl: 'sidebar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent {
   private readonly blinkService = inject(BlinkService);

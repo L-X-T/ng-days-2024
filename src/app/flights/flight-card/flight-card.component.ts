@@ -1,5 +1,7 @@
 import {
+  ChangeDetectionStrategy,
   Component,
+  DoCheck,
   ElementRef,
   EventEmitter,
   inject,
@@ -23,9 +25,9 @@ import { BlinkService } from '../../shared/blink.service';
   imports: [CityPipe],
   templateUrl: './flight-card.component.html',
   styleUrl: './flight-card.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlightCardComponent implements OnChanges, OnInit, OnDestroy {
+export class FlightCardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   debug = isDevMode();
 
   @Input({ required: true }) item!: Flight;
@@ -47,6 +49,14 @@ export class FlightCardComponent implements OnChanges, OnInit, OnDestroy {
   ngOnInit(): void {
     if (this.debug) {
       console.warn('[FlightCardComponent - ngOnInit()]');
+      console.log(this.item);
+      console.log('selected: ' + this.selected);
+    }
+  }
+
+  ngDoCheck(): void {
+    if (this.debug) {
+      console.warn('[FlightCardComponent - ngDoCheck()]');
       console.log(this.item);
       console.log('selected: ' + this.selected);
     }
