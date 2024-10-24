@@ -136,3 +136,5 @@ export class FlightEditComponent implements OnChanges {
     }
   }
 }
+
+export default FlightEditComponent;

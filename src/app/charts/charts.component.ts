@@ -26,3 +26,5 @@ export class ChartsComponent {
     }
   }
 }
+
+export default ChartsComponent;

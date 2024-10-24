@@ -1,9 +1,8 @@
 import { Route } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
 import { ChartsComponent } from './charts/charts.component';
 
-import flightRoutes from './flights/flights.routes';
+// import flightRoutes from './flights/flights.routes';
 
 export const appRoutes: Route[] = [
   {
@@ -14,18 +13,18 @@ export const appRoutes: Route[] = [
 
   {
     path: 'home',
-    component: HomeComponent,
+    loadComponent: () => import('./home/home.component'),
   },
 
   {
     path: 'flights',
-    children: flightRoutes,
-    // loadChildren: () => import('./flights/flights.routes').then((f) => f.flightBookingRoutes),
+    // children: flightRoutes,
+    loadChildren: () => import('./flights/flights.routes'),
   },
 
   {
     path: 'charts',
-    component: ChartsComponent,
+    loadComponent: () => import('./charts/charts.component'),
   },
 
   /*{
