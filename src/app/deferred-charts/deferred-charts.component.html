@@ -52,7 +52,7 @@
             }
           }
           @default {
-            @defer (on hover) {
+            @defer (on hover; prefetch on idle) {
               <app-chart [id]="chart.id" [data]="chart.data" />
             } @loading {
               <div class="placeholder">Chart is loading.</div>
