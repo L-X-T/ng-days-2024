@@ -1,9 +1,10 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withPreloading } from '@angular/router';
 
 import { appRoutes } from './app.routes';
 import { provideImageKitLoader } from '@angular/common';
+import { quicklinkProviders, QuicklinkStrategy } from 'ngx-quicklink';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,8 +13,10 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       appRoutes,
+      withPreloading(QuicklinkStrategy),
       // withDebugTracing(),
       // withEnabledBlockingInitialNavigation()
     ),
+    quicklinkProviders,
   ],
 };
